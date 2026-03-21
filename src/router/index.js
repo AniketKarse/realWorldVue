@@ -15,7 +15,7 @@ const router = createRouter({
       component: EventList,
     },
     {
-      path: '/event/:id',
+      path: '/events/:id',
       name: 'EventLayout',
       props: true,
       component: EventLayout,
@@ -38,12 +38,19 @@ const router = createRouter({
       ]
     },
     {
-      path: '/about',
+      path:'/event/:afterEvent(.*)',
+      redirect: to => {
+        return{ path: '/events/' + to.params.afterEvent}
+      }
+    },
+    {
+      path: '/about-us',
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
+      alias: '/about'
     },
   ],
 })
