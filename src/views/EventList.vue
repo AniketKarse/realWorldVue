@@ -43,10 +43,10 @@ watch(
     <h1>Events for good</h1>
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <div class="pagination">
-      <RouterLink id="page-prev" :to="{ name: 'event-list', query: { page: page - 1 } }" rel="prev" v-if="page != 1">
+      <RouterLink id="page-prev" :to="{ name: 'EventList', query: { page: page - 1 } }" rel="prev" v-if="page != 1">
         &#60; Previous</RouterLink>
 
-      <RouterLink id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next" v-if="hasNext">Next
+      <RouterLink id="page-next" :to="{ name: 'EventList', query: { page: page + 1 } }" rel="next" v-if="hasNext">Next
         &#62;
       </RouterLink>
     </div>
