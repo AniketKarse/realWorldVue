@@ -62,4 +62,8 @@ h2 {
   animation-name: yellowfade;
   animation-duration: 3s;
 }
+
+h1 {
+  font-size: large;
+}
 </style>

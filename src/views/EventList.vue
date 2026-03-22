@@ -9,7 +9,7 @@ const events = ref(null);
 const props = defineProps(['page'])
 const totalEvents = ref(0)
 const fetchevents = () => {
-  EventService.getEvents(2, props.page)
+  EventService.getEvents(9, props.page)
     .then((response) => {
       events.value = response.data
       totalEvents.value = response.headers["x-total-count"]
